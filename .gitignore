@@ -361,3 +361,36 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Ignorar a pasta Library gerada pelo Unity
+Library/
+
+# Ignorar a pasta Temp gerada pelo Unity
+Temp/
+
+# Ignorar a pasta Obj gerada pelo Unity
+Obj/
+
+# Ignorar arquivos de build
+Builds/
+
+# Ignorar logs
+Logs/
+
+# Ignorar arquivos de solução e projeto do Visual Studio
+*.sln
+*.csproj
+*.suo
+*.user
+
+# Ignorar a pasta .vs gerada pelo Visual Studio
+.vs/
+
+# Ignorar arquivos de depuração do Visual Studio
+*.pidb
+
+# Ignorar a pasta Packages gerada pelo Unity Package Manager
+Packages/
+
+# Ignorar arquivos de preferências do usuário do Unity
+*.userprefs
