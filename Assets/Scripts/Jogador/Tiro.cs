@@ -5,8 +5,8 @@ using UnityEngine;
 public class CannonController : MonoBehaviour
 {
     public GameObject cannonballPrefab; // Prefab da bola de canhão
-    public Transform leftFirePoint; // Ponto de origem do tiro para o canhão esquerdo
-    public Transform rightFirePoint; // Ponto de origem do tiro para o canhão direito
+    public Transform[] leftFirePoints; // Pontos de origem do tiro para os canhões esquerdos
+    public Transform[] rightFirePoints; // Pontos de origem do tiro para os canhões direitos
     public float fireRate = 0.5f; // Taxa de disparo (tiros por segundo)
     private float nextFireTime; // Tempo para o próximo disparo
 
@@ -21,21 +21,27 @@ public class CannonController : MonoBehaviour
     void Update()
     {
         // Verifica se o jogador pressionou o botão de disparo e se já passou o tempo para o próximo disparo
-        if (Input.GetButtonDown("Fire1") && Time.time >= nextFireTime)
+        if ((Input.GetButtonDown("Fire1") || Input.GetButtonDown("Fire2")) && Time.time >= nextFireTime)
         {
             // Define o tempo para o próximo disparo com base na taxa de disparo
             nextFireTime = Time.time + 1f / fireRate;
 
-            // Chama o método para realizar o disparo no canhão esquerdo
-            Shoot(leftFirePoint);
-        }
-        else if (Input.GetButtonDown("Fire2") && Time.time >= nextFireTime)
-        {
-            // Define o tempo para o próximo disparo com base na taxa de disparo
-            nextFireTime = Time.time + 1f / fireRate;
-
-            // Chama o método para realizar o disparo no canhão direito
-            Shoot(rightFirePoint);
+            // Chama o método para realizar o disparo em todos os canhões do lado esquerdo
+            if (Input.GetButtonDown("Fire1"))
+            {
+                foreach (Transform firePoint in leftFirePoints)
+                {
+                    Shoot(firePoint);
+                }
+            }
+            // Chama o método para realizar o disparo em todos os canhões do lado direito
+            else if (Input.GetButtonDown("Fire2"))
+            {
+                foreach (Transform firePoint in rightFirePoints)
+                {
+                    Shoot(firePoint);
+                }
+            }
         }
     }
 

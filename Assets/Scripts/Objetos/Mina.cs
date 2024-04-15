@@ -5,6 +5,7 @@ using UnityEngine;
 public class Mine : MonoBehaviour
 {
     public int damageAmount = 200; // Quantidade de dano que a mina causa
+  
 
     // Método chamado quando um objeto entra na área de colisão da mina
     void OnTriggerEnter(Collider other)
