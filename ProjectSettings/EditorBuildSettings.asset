@@ -4,5 +4,20 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu/Menu.unity
+    guid: 7a8680685fe9adc49a228acb1edb2397
+  - enabled: 1
+    path: Assets/Scenes/Primeira Fase/PrimeiraFase.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Segunda fase/SegundaFase.unity
+    guid: ff0d6c08704299643a8d5a639a98302c
+  - enabled: 1
+    path: Assets/Scenes/Tela de Vitoria/VictoryScreen.unity
+    guid: e06533ae7f1d63f41a28e159178021d0
+  - enabled: 1
+    path: Assets/Scenes/Tela de Derrota/LoseScreen.unity
+    guid: 07045c0b6236e3d4bbd153dc9a2e394f
   m_configObjects: {}
